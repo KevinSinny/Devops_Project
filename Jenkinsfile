@@ -9,19 +9,19 @@ pipeline {
         stage('Clone Code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/KevinSinny/Devops_Project.git'
+                    url: 'https://github.com/MamthaKSunilkumar/CS8_demo.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
 
         stage('Build React App') {
             steps {
-                bat 'npm run build'
+                sh 'npm run build'
             }
         }
     }
@@ -35,4 +35,3 @@ pipeline {
         }
     }
 }
-
