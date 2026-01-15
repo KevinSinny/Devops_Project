@@ -2,11 +2,14 @@ FROM node:20
 
 WORKDIR /my-app
 
-COPY package*.json ./
+# Copy app folder instead of root
+COPY myapp/package*.json ./myapp/
+
+WORKDIR /my-app/myapp
 
 RUN npm install
 
-COPY . .
+COPY myapp .
 
 EXPOSE 5173
 
